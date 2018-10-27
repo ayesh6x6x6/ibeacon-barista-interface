@@ -16,11 +16,12 @@ export class HomePage {
 
   ionViewWillEnter() {
     this.zone.run(()=>{
-      setInterval(function(){
-        this.http.get('http://10.25.159.146:3000/api/getuser',{},{}).then(userr=>{
-          this.user = userr;
-          console.log(userr);
-          
+      console.log('Inside RUn');
+      setInterval(()=>{
+        this.http.get('http://10.25.159.146:3000/api/getuser',{},{}).then(data=>{
+          this.user = JSON.parse(data.data);
+          console.log(JSON.stringify(this.user));
+
         });
       }, 3000);
     });
