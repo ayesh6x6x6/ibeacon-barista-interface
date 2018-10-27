@@ -1,17 +1,36 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>
+    <ion-navbar>
+      <ion-title>Barista Interface</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="body">
+    <div class=crd>
+        <ion-card padding>
+            <ion-card-title style="font-family:cursive; font-size: 25Kspx; color:#000;">
+              Customers near you:
+            </ion-card-title>
+        </ion-card>
+        
+        <ion-list>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="https://static.thenounproject.com/png/17239-200.png">
+              </ion-avatar>
+              <h2>{{user.username}}</h2>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="primary">
+                <ion-icon name="bulb"></ion-icon>
+                Preferences
+              </button>
+              <button ion-button color="secondary">
+                <ion-icon name="bookmarks"></ion-icon>
+                Previous Orders
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+    </div>    
+  </ion-content>
