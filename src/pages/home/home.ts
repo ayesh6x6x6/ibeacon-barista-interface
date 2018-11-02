@@ -10,11 +10,12 @@ import { connect, Client, IConnackPacket } from 'mqtt';
 export class HomePage {
   user = {};
   zone: any;
+  client:Client
 
-  constructor(public navCtrl: NavController, public http: HTTP,public client:Client) {
+  constructor(public navCtrl: NavController, public http: HTTP,) {
     this.zone = new NgZone({ enableLongStackTrace: false });
-    client = connect('mqtt://test.mosquitto.org',{port:8080});
-    client.subscribe('/cafe/tobarista', (err, granted) => {
+    this.client = connect('mqtt://test.mosquitto.org',{port:8080});
+    this.client.subscribe('/cafe/tobarista', (err, granted) => {
     }).on('message', (topic: string, payload: string) => {
       console.log(`message from ${topic}: ${payload}`);
       const person = JSON.parse(payload);
