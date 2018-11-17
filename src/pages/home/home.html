@@ -11,26 +11,30 @@
               Customers near you:
             </ion-card-title>
         </ion-card>
-        
-        <ion-list>
-          <ion-item-sliding>
-            <ion-item>
-              <ion-avatar item-start>
-                <img src="https://static.thenounproject.com/png/17239-200.png">
-              </ion-avatar>
-              <h2>{{user.username}}</h2>
-            </ion-item>
-            <ion-item-options side="right">
-              <button ion-button color="primary">
-                <ion-icon name="bulb"></ion-icon>
-                Preferences
-              </button>
-              <button ion-button color="secondary">
-                <ion-icon name="bookmarks"></ion-icon>
-                Previous Orders
-              </button>
-            </ion-item-options>
-          </ion-item-sliding>
-        </ion-list>
+        <div *ngFor="let user of users">
+            <ion-card>     
+              <ion-card-content>
+                  <ion-item>
+                      <ion-avatar item-start>
+                        <img [src]="user.picture">
+                      </ion-avatar>
+                      <h3>{{user.username}}</h3>
+                      <p>{{user.email}}</p>
+                      <p>Preferences: {{user.favItems}} </p>
+                    </ion-item>
+              </ion-card-content> 
+               
+              
+                <ion-row>
+                  <ion-col>
+                    <button (click)="onReady(user.username)" ion-button icon-start clear small>
+                      <ion-icon name="cafe"></ion-icon>
+                      <div>Served</div>
+                    </button>
+                  </ion-col>
+                </ion-row>
+              
+              </ion-card>
+        </div>
     </div>    
   </ion-content>

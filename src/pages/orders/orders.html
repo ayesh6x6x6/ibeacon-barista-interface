@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title>Orders</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngFor="let order of orders">
+      <ion-card>
+
+          <ion-item>
+            <ion-avatar item-start>
+              <img [src]="order.user.picture">
+            </ion-avatar>
+            <h2>{{order.user.username}}</h2>
+            <p>{{order.user.email}}</p>
+          </ion-item>
+        
+          <ion-card-content>
+            <p>Bill for: {{order.bill}} </p>
+            <ion-list *ngFor="let item of order.cart">
+              <ion-item>
+                <h5> {{item.name}} </h5>
+                <p> AED {{item.price}} </p>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        
+          <ion-row>
+            <ion-col>
+              <button (click)="onReady(order.user.username)" ion-button icon-start clear small>
+                <ion-icon name="cafe"></ion-icon>
+                <div>Ready to Serve</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button (click)="onServed(order.user.username)" ion-button icon-start clear small>
+                <ion-icon name="remove"></ion-icon>
+                <div>Served</div>
+              </button>
+            </ion-col>
+          </ion-row>
+        
+        </ion-card>
+  </div>
+    
+</ion-content>

@@ -1,0 +1,13 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Track your Customer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 *ngIf="!reachedCustomer" > Customer {{username}} is currently at table {{table}} </h2>
+  <h2 *ngIf="reachedCustomer" >You have reached your customer</h2>
+</ion-content>
