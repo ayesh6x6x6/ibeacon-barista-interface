@@ -12,27 +12,23 @@
             </ion-card-title>
         </ion-card>
         <div *ngFor="let user of users">
-            <ion-card>     
+            <ion-card (click)="onUserDetails(user)" >     
               <ion-card-content>
                   <ion-item>
-                      <ion-avatar item-start>
+                      <!-- <ion-avatar item-start>
                         <img [src]="user.picture">
-                      </ion-avatar>
-                      <h3>{{user.username}}</h3>
-                      <p>{{user.email}}</p>
-                      <p>Preferences: {{user.favItems}} </p>
-                    </ion-item>
+                      </ion-avatar> -->
+                      <h3>{{user}}</h3>
+                  </ion-item>
               </ion-card-content> 
-               
-              
-                <ion-row>
+              <ion-row>
                   <ion-col>
-                    <button (click)="onReady(user.username)" ion-button icon-start clear small>
+                    <button (click)="onReady(user)" ion-button icon-start clear small>
                       <ion-icon name="cafe"></ion-icon>
                       <div>Served</div>
                     </button>
                   </ion-col>
-                </ion-row>
+              </ion-row>
               
               </ion-card>
         </div>

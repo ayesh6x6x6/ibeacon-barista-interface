@@ -15,7 +15,7 @@
             <ion-avatar item-start>
               <img [src]="order.user.picture">
             </ion-avatar>
-            <h2>{{order.user.username}}</h2>
+            <p>{{order.user.username}}</p>
             <p>{{order.user.email}}</p>
           </ion-item>
         
@@ -23,7 +23,7 @@
             <p>Bill for: {{order.bill}} </p>
             <ion-list *ngFor="let item of order.cart">
               <ion-item>
-                <h5> {{item.name}} </h5>
+                <p> {{item.name}} </p>
                 <p> AED {{item.price}} </p>
               </ion-item>
             </ion-list>

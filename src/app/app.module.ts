@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HTTP } from '@ionic-native/http';
 import { OrdersPage } from '../pages/orders/orders';
 import { WaiterTrackPage } from '../pages/waiter-track/waiter-track';
+import { UserDetailsPage } from '../pages/user-details/user-details';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WaiterTrackPage } from '../pages/waiter-track/waiter-track';
     HomePage,
     TabsPage,
     OrdersPage,
-    WaiterTrackPage
+    WaiterTrackPage,
+    UserDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { WaiterTrackPage } from '../pages/waiter-track/waiter-track';
     HomePage,
     TabsPage,
     OrdersPage,
-    WaiterTrackPage
+    WaiterTrackPage,
+    UserDetailsPage
   ],
   providers: [
     StatusBar,

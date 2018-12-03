@@ -23,15 +23,17 @@ export class OrdersPage {
   }
 
   onReady(username:string){
-    this.client.subscribe(`cafe/users/${username}`).on('message',(topic:string,payload:string)=>{
+    console.log('Order ready for user:'+username);
+    this.client.subscribe(`cafe/usertracker/${username}`).on('message',(topic:string,payload:string)=>{
       const {table} = JSON.parse(payload);
       console.log('Table gotten is:'+table);
       this.client.publish(`cafe/orderarrive/${table}`,'Arriving');
-      this.client.unsubscribe(`cafe/users/${username}`);
+      this.client.unsubscribe(`cafe/usertracker/${username}`);
+      console.log('Order ready for user:'+username);
+      this.client.publish(`cafe/orderready/${username}`,"Order ready");
+      this.navCtrl.push(WaiterTrackPage,{username:username});
     });
-    console.log('Order ready for user:'+username);
-    this.client.publish(`cafe/orderready/${username}`,"Order ready");
-    this.navCtrl.push(WaiterTrackPage,{username:username});
+    
   }
 
   onServed(username:string){

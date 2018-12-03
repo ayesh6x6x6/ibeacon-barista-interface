@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { connect, Client, IConnackPacket } from 'mqtt';
 
@@ -45,7 +45,7 @@ export class WaiterTrackPage {
   }
   ionViewWillEnter(){
     this.username = this.navParams.get('username');
-    this.client.subscribe(`cafe/users/${this.username}`);
+    this.client.subscribe(`cafe/usertracker/${this.username}`);
   }
 
 }

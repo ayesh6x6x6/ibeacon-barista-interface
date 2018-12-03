@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+      <ion-card-header>
+        <ion-avatar>
+          <img [src]="user.img">
+        </ion-avatar>
+        Name : {{user.username}}
+      </ion-card-header>
+      <ion-card-content>
+        Preferences : <div *ngFor="let item of user.preferences" >
+          {{item}}
+        </div>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
