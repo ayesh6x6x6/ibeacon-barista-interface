@@ -14,6 +14,7 @@ import { HTTP } from '@ionic-native/http';
 import { OrdersPage } from '../pages/orders/orders';
 import { WaiterTrackPage } from '../pages/waiter-track/waiter-track';
 import { UserDetailsPage } from '../pages/user-details/user-details';
+import { OffersPage } from '../pages/offers/offers';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserDetailsPage } from '../pages/user-details/user-details';
     TabsPage,
     OrdersPage,
     WaiterTrackPage,
-    UserDetailsPage
+    UserDetailsPage,
+    OffersPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { UserDetailsPage } from '../pages/user-details/user-details';
     TabsPage,
     OrdersPage,
     WaiterTrackPage,
-    UserDetailsPage
+    UserDetailsPage,
+    OffersPage
   ],
   providers: [
     StatusBar,
